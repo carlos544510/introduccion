@@ -1,0 +1,20 @@
+<div class="col-md-12">
+  <a routerLink="/users/add"class="btn btn-btn-xs floar-right btn-warning">añadir usuario</a>
+  <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>NOMBRE</th>
+          <th>TELEFONO</th>
+        </tr>
+      </thead>
+      <tbody *ngIf="users">
+        <tr *ngFor="let user of users">
+          <td>{{user.id}}</td>
+          <td>{{user.name}}</td>
+          <td>{{user.telephone}}</td>
+        </tr>
+
+      </tbody>
+  </table>
+</div>
