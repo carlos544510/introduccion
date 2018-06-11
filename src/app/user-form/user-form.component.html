@@ -1,3 +1,33 @@
-<p>
-  user-form works!
-</p>
+<div class ="container">
+  <div class="row">
+    <div class="col-md-10 offset-md-1">
+      <h1 class="center">{{h1Text}}</h1>
+      <form 
+      novalidate (ngSubmit)="submit()"
+      #userForm="ngForm">
+      <div class="form-group">
+
+        <label for="name">nombre</label>
+        <input type="text" class="form-control"
+        id="username"
+        name="username"
+        [(ngModel)]="user.name"
+        #username="ngModel"/>
+       </div>
+
+        <div>
+        <label for="telefono">telefono</label>
+        <input type="text" class="form-control"
+        id="telefono"
+        name="telefono"
+        [(ngModel)]="user.telephone"
+        #telephone="ngModel"/>
+    </div>
+    <button class="btn btn-block btn-primary"
+    type="submit">
+    {{submitText}}
+  </button>
+    </form>
+    </div>
+  </div>
+</div>

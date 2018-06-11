@@ -8,18 +8,22 @@ import { UserCrudComponent } from './user-crud/user-crud.component';
 import { HttpClientModule } from '@angular/common/http';
 import { UserDetailComponent } from './user-detail/user-detail.component';
 import { UserFormComponent } from './user-form/user-form.component';
-
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { UserEditComponent } from './user-edit/user-edit.component';
 @NgModule({
   declarations: [
     AppComponent,
     UserCrudComponent,
     UserDetailComponent,
-    UserFormComponent
+    UserFormComponent,
+    UserEditComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [UsersService],
   bootstrap: [AppComponent]
