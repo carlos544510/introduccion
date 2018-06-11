@@ -13,15 +13,22 @@ export class UsersService {
 
   }
 
+  getProductos(): Observable<User[]>{
+  
+    return this.http.get<User[]>(this.usersUrl);    
+ }
+
   getUsers (): Observable<User[]>{
     return this.http.get<User []>(this.usersUrl)
     .pipe(catchError(this.handleError));
   }
 
   getUser (id: string | number): Observable<User>{
-    const url = `${this.usersUrl}/${id}`;
-    return this.http.get<User>(url)
-    .pipe(catchError(this.handleError));
+    //const url = `${this.usersUrl}/${id}`;
+    const url = 'http://localhost:4000/api/v1/users'+id;
+    
+    return this.http.get<User>(url);
+        
   }
 
   addUser (user: User): Observable<User>{

@@ -13,7 +13,19 @@ export class UserCrudComponent implements OnInit {
   constructor(private usersService: UsersService) { }
 
   ngOnInit() {
-    this.usersService.getUsers().subscribe(users=>{this.users = users});
+   this.usersService.getProductos().subscribe(users=>{this.users = users});
+   
+  }
+
+  remove(user:User){
+    console.log(user.id);
+    var id = user.id;
+         var req = new XMLHttpRequest();
+      
+         req.open('DELETE', 'http://localhost:4000/api/v1/users/'+id, true); 
+         req.send(null);
+         
+        
   }
 
 }

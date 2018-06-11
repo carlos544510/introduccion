@@ -6,6 +6,7 @@
           <th>ID</th>
           <th>NOMBRE</th>
           <th>TELEFONO</th>
+          <th>ACCIONES</th>
         </tr>
       </thead>
       <tbody *ngIf="users">
@@ -13,6 +14,11 @@
           <td>{{user.id}}</td>
           <td>{{user.name}}</td>
           <td>{{user.telephone}}</td>
+          <td>
+            <a [routerLink]="['/users',user.id, 'detail']"class="btn btn-xs btn-info">detalle</a>
+            <a [routerLink]="['/users',user.id, 'edit']"class="btn btn-xs btn-primary">editar</a>
+            <button (click)="remove(user)"class="btn btn-xs btn-danger" >eliminar</button>
+          </td>
         </tr>
 
       </tbody>

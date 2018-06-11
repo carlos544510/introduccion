@@ -1,0 +1,15 @@
+<div class="row" *ngIf="user">
+  <div class="col-md-10 off">
+    <div class="card text-center">
+      <div class="card-header">
+        {{user.id}}
+      </div>
+      <div class="card-block">
+        <h4 class="card-title">{{user.name}}</h4>
+        <p class ="card-text">{{user.telephone}}</p>
+        <a routerLink="/crud" class="btn btn-primary">volver</a>
+      </div>
+    </div>
+
+  </div>
+</div>
