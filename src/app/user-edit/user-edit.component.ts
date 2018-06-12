@@ -34,22 +34,28 @@ export class UserEditComponent implements OnInit {
   }
 
   update(user:User){
-    let usersUrl: string ='http://localhost:4000/api/v1/update/users/'+user.id;
-    this.http.put(usersUrl, {params: user}, cudOptions);
-    console.log("hola");
-      //   const id = user.id;
-      //   console.log(user.name);
-
-      //   var data = {params: {name: user.name, telephone: user.telephone}};
-      //   var json = JSON.stringify(data);
-      //   console.log(json);
-      //   const url = 'http://localhost:4000/api/v1/update/users/';
-      //   var req = new XMLHttpRequest();
+    // let usersUrl: string ='http://localhost:4000/api/v1/update/users/'+user.id;
+    // this.http.put(usersUrl, {params: user}, cudOptions);
+    // console.log("hola");
+       const id = user.id;
+         console.log(user.name);
+         var formData = new FormData();
+         formData.append("name", user.name);
+         formData.append("telephone", user.telephone);
         
-      //   req.open('PUT', url+id, true);
-      //  // req.setRequestHeader('Content-type','application/json; charset=utf-8');
+         //var json = JSON.stringify(data);
+         console.log(formData);
+         const url = 'http://localhost:4000/api/v1/update/users/';
+
+         var xhr = new XMLHttpRequest();
+         xhr.open("POST", url+id);
+         xhr.send(formData);
+         
+        
+        
+        // req.setRequestHeader('Content-type','application/json; charset=utf-8');
        
-      //   req.send(json);
+        
       
         
         
