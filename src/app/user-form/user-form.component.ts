@@ -10,8 +10,12 @@ export class UserFormComponent  {
   @Input() submitText: string;
   @Input() user: User;
   @Output() onSubmit: EventEmitter<any>=new EventEmitter<any>();
-  
+
   constructor() { }
+
+  submit(){
+    this.onSubmit.emit(this.user);
+  }
   
 
 

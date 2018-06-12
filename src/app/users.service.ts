@@ -37,15 +37,13 @@ export class UsersService {
   }
 
   updateUser (user: User): Observable<User>{
-    return this.http.put(this.usersUrl, user, cudOptions)
-    .pipe(catchError(this.handleError));
+    return this.http.put(this.usersUrl, user, cudOptions);
   }
 
   deleteUser (user: User | number): Observable<User>{
     const id = typeof user === 'number'? user: user.id;
-    const url = `${this.usersUrl}/${id}`;
-    return this.http.delete<User>(url,cudOptions)
-    .pipe(catchError(this.handleError));
+    const url = 'http://localhost:4000/api/v1/users/'+id;
+    return this.http.delete<User>(url);
   }
  
   private handleError(error: any){

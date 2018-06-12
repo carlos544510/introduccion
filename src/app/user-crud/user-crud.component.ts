@@ -19,13 +19,13 @@ export class UserCrudComponent implements OnInit {
 
   remove(user:User){
     console.log(user.id);
-    var id = user.id;
+         var id = user.id;
          var req = new XMLHttpRequest();
       
-         req.open('DELETE', 'http://localhost:4000/api/v1/users/'+id, true); 
+         req.open("options", 'http://localhost:4000/api/v1/borrar/users/'+id, true); 
          req.send(null);
          
-        
+      
   }
 
 }
