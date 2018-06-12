@@ -1,3 +1,30 @@
-<p>
-  user-add works!
-</p>
+<div class ="container">
+    <div class="row">
+      <div class="col-md-10 offset-md-1">
+        <h1 class="center">{{h1Text}}</h1>
+        <form 
+        
+        #userForm="ngForm">
+        <div class="form-group">
+  
+          <label for="name">nombre</label>
+          <input type="text" class="form-control"
+          id="username"
+          name="username"
+          
+          #username/>
+         </div>
+  
+          <div>
+          <label for="telefono">telefono</label>
+          <input type="text" class="form-control"
+          id="telefono"
+          name="telefono"
+          
+          #telephone/>
+      </div>
+      <button (click)="add(username.value, telephone.value)"class="btn btn-xs " >submit</button>
+      </form>
+      </div>
+    </div>
+  </div>s
